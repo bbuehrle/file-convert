@@ -23,7 +23,7 @@ class DataDnc
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $phone;
+    protected $phone;
 
     /**
      * @var string
@@ -32,7 +32,7 @@ class DataDnc
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $fullName = '';
+    protected $fullName = '';
 
     /**
      * @var string
@@ -41,7 +41,7 @@ class DataDnc
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $fullAddress = '';
+    protected $fullAddress = '';
 
     /**
      * @var string
@@ -50,329 +50,329 @@ class DataDnc
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
-    private $segment = '';
+    protected $segment = '';
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="firstname", type="string", length=45, nullable=true)
      */
-    private $firstname;
+    protected $firstname;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="lastname", type="string", length=45, nullable=true)
      */
-    private $lastname;
+    protected $lastname;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="hsenbr", type="string", length=45, nullable=true)
      */
-    private $hsenbr;
+    protected $hsenbr;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="predir", type="string", length=45, nullable=true)
      */
-    private $predir;
+    protected $predir;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="address", type="string", length=45, nullable=true)
      */
-    private $address;
+    protected $address;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="strtype", type="string", length=45, nullable=true)
      */
-    private $strtype;
+    protected $strtype;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="postdir", type="string", length=45, nullable=true)
      */
-    private $postdir;
+    protected $postdir;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="dwltype", type="string", length=45, nullable=true)
      */
-    private $dwltype;
+    protected $dwltype;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="aptnbr", type="string", length=45, nullable=true)
      */
-    private $aptnbr;
+    protected $aptnbr;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="city", type="string", length=45, nullable=true)
      */
-    private $city;
+    protected $city;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="state", type="string", length=45, nullable=true)
      */
-    private $state;
+    protected $state;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="zipcode", type="string", length=45, nullable=true)
      */
-    private $zipcode;
+    protected $zipcode;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="plus4", type="string", length=45, nullable=true)
      */
-    private $plus4;
+    protected $plus4;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="fod", type="string", length=45, nullable=true)
      */
-    private $fod;
+    protected $fod;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="term", type="string", length=45, nullable=true)
      */
-    private $term;
+    protected $term;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="ttlcost", type="string", length=45, nullable=true)
      */
-    private $ttlcost;
+    protected $ttlcost;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="fstdate", type="string", length=45, nullable=true)
      */
-    private $fstdate;
+    protected $fstdate;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="piatype", type="string", length=45, nullable=true)
      */
-    private $piatype;
+    protected $piatype;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="cccdacctnb", type="string", length=45, nullable=true)
      */
-    private $cccdacctnb;
+    protected $cccdacctnb;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="ccv", type="string", length=45, nullable=true)
      */
-    private $ccv;
+    protected $ccv;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="rtenbr", type="string", length=45, nullable=true)
      */
-    private $rtenbr;
+    protected $rtenbr;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="chknbr", type="string", length=45, nullable=true)
      */
-    private $chknbr;
+    protected $chknbr;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="expdatecc", type="string", length=45, nullable=true)
      */
-    private $expdatecc;
+    protected $expdatecc;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="nameoncard", type="string", length=45, nullable=true)
      */
-    private $nameoncard;
+    protected $nameoncard;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="verified", type="string", length=45, nullable=true)
      */
-    private $verified;
+    protected $verified;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="mailadd", type="string", length=45, nullable=true)
      */
-    private $mailadd;
+    protected $mailadd;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="promocode", type="string", length=45, nullable=true)
      */
-    private $promocode;
+    protected $promocode;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="acctnbr", type="string", length=45, nullable=true)
      */
-    private $acctnbr;
+    protected $acctnbr;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="stopdate", type="string", length=45, nullable=true)
      */
-    private $stopdate;
+    protected $stopdate;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="stopreason", type="string", length=45, nullable=true)
      */
-    private $stopreason;
+    protected $stopreason;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="prevfod", type="string", length=45, nullable=true)
      */
-    private $prevfod;
+    protected $prevfod;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="prevterm", type="string", length=45, nullable=true)
      */
-    private $prevterm;
+    protected $prevterm;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="balancedue", type="string", length=45, nullable=true)
      */
-    private $balancedue;
+    protected $balancedue;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="emailaddy", type="string", length=45, nullable=true)
      */
-    private $emailaddy;
+    protected $emailaddy;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delins", type="string", length=45, nullable=true)
      */
-    private $delins;
+    protected $delins;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="comments1", type="string", length=45, nullable=true)
      */
-    private $comments1;
+    protected $comments1;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="comments2", type="string", length=45, nullable=true)
      */
-    private $comments2;
+    protected $comments2;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="balwaived", type="string", length=45, nullable=true)
      */
-    private $balwaived;
+    protected $balwaived;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="actcmp", type="string", length=45, nullable=true)
      */
-    private $actcmp;
+    protected $actcmp;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="holduntil", type="string", length=45, nullable=true)
      */
-    private $holduntil;
+    protected $holduntil;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="subsegment", type="string", length=45, nullable=true)
      */
-    private $subsegment;
+    protected $subsegment;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="actiondate", type="date", nullable=true)
      */
-    private $actiondate;
+    protected $actiondate;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="rec_owner", type="string", length=45, nullable=true)
      */
-    private $recOwner;
+    protected $recOwner;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="loaddate", type="date", nullable=true)
      */
-    private $loaddate;
+    protected $loaddate;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="updatedate", type="date", nullable=true)
      */
-    private $updatedate;
+    protected $updatedate;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="fileout", type="date", nullable=true)
      */
-    private $fileout;
+    protected $fileout;
 
 
 }
