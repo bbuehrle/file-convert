@@ -77,4 +77,6 @@ abstract class FileColumn
 
         return $this;
     }
+
+    abstract function cast(?string $data);
 }

@@ -209,4 +209,13 @@ class DateTimeColumn extends DateColumn
 
         return $dateFormat . $dtSeparator . $timeFormat;
     }
+
+    function cast(?string $data): ?\DateTimeInterface
+    {
+        if (empty($data)) {
+            return null;
+        }
+
+        return \DateTime::createFromFormat($this->getFormatted(), $data);
+    }
 }

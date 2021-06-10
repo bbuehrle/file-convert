@@ -169,4 +169,13 @@ class DateColumn extends FileColumn
 
         return $this;
     }
+
+    function cast(?string $data): ?\DateTimeInterface
+    {
+        if (empty($data)) {
+            return null;
+        }
+
+        return \DateTime::createFromFormat($this->getFormatted(), $data);
+    }
 }
