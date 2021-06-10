@@ -1,84 +1,42 @@
 <?php
 
+
 namespace App\Entity\Skynet;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * DataDnc
- *
- * @ORM\Table(name="data_dnc",
- *     indexes={
- *      @ORM\Index(name="full_address", columns={"full_address"}),
- *      @ORM\Index(name="full_name", columns={"full_name"})
- *     })
- * @ORM\Entity
+ * @ORM\MappedSuperclass()
  */
-class DataDnc
+abstract class BaseDialerFields
 {
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="phone", type="string", length=10, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     */
-    protected $phone;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="full_name", type="string", length=255, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     */
-    protected $fullName = '';
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="full_address", type="string", length=255, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     */
-    protected $fullAddress = '';
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="segment", type="string", length=45, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     */
-    protected $segment = '';
-
     /**
      * @var string|null
      *
      * @ORM\Column(name="firstname", type="string", length=45, nullable=true)
      */
-    protected $firstname;
+    protected $firstName;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="lastname", type="string", length=45, nullable=true)
      */
-    protected $lastname;
+    protected $lastName;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="hsenbr", type="string", length=45, nullable=true)
      */
-    protected $hsenbr;
+    protected $houseNumber;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="predir", type="string", length=45, nullable=true)
      */
-    protected $predir;
+    protected $preDirection;
 
     /**
      * @var string|null
@@ -92,28 +50,28 @@ class DataDnc
      *
      * @ORM\Column(name="strtype", type="string", length=45, nullable=true)
      */
-    protected $strtype;
+    protected $streetType;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="postdir", type="string", length=45, nullable=true)
      */
-    protected $postdir;
+    protected $postDirection;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="dwltype", type="string", length=45, nullable=true)
      */
-    protected $dwltype;
+    protected $dwellingType;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="aptnbr", type="string", length=45, nullable=true)
      */
-    protected $aptnbr;
+    protected $dwellingNumber;
 
     /**
      * @var string|null
@@ -134,7 +92,7 @@ class DataDnc
      *
      * @ORM\Column(name="zipcode", type="string", length=45, nullable=true)
      */
-    protected $zipcode;
+    protected $zipCode;
 
     /**
      * @var string|null
@@ -162,28 +120,28 @@ class DataDnc
      *
      * @ORM\Column(name="ttlcost", type="string", length=45, nullable=true)
      */
-    protected $ttlcost;
+    protected $totalCost;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="fstdate", type="string", length=45, nullable=true)
      */
-    protected $fstdate;
+    protected $futureStart;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="piatype", type="string", length=45, nullable=true)
      */
-    protected $piatype;
+    protected $piaType;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="cccdacctnb", type="string", length=45, nullable=true)
      */
-    protected $cccdacctnb;
+    protected $cccdAccountNumber;
 
     /**
      * @var string|null
@@ -197,28 +155,28 @@ class DataDnc
      *
      * @ORM\Column(name="rtenbr", type="string", length=45, nullable=true)
      */
-    protected $rtenbr;
+    protected $routingNumber;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="chknbr", type="string", length=45, nullable=true)
      */
-    protected $chknbr;
+    protected $checkNumber;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="expdatecc", type="string", length=45, nullable=true)
      */
-    protected $expdatecc;
+    protected $ccExpirationDate;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="nameoncard", type="string", length=45, nullable=true)
      */
-    protected $nameoncard;
+    protected $nameOnCard;
 
     /**
      * @var string|null
@@ -232,70 +190,70 @@ class DataDnc
      *
      * @ORM\Column(name="mailadd", type="string", length=45, nullable=true)
      */
-    protected $mailadd;
+    protected $mailingAddress;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="promocode", type="string", length=45, nullable=true)
      */
-    protected $promocode;
+    protected $promoCode;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="acctnbr", type="string", length=45, nullable=true)
      */
-    protected $acctnbr;
+    protected $accountNumber;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="stopdate", type="string", length=45, nullable=true)
      */
-    protected $stopdate;
+    protected $stopDate;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="stopreason", type="string", length=45, nullable=true)
      */
-    protected $stopreason;
+    protected $stopReason;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="prevfod", type="string", length=45, nullable=true)
      */
-    protected $prevfod;
+    protected $prevFod;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="prevterm", type="string", length=45, nullable=true)
      */
-    protected $prevterm;
+    protected $prevTerm;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="balancedue", type="string", length=45, nullable=true)
      */
-    protected $balancedue;
+    protected $balanceDue;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="emailaddy", type="string", length=45, nullable=true)
      */
-    protected $emailaddy;
+    protected $emailAddress;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delins", type="string", length=45, nullable=true)
      */
-    protected $delins;
+    protected $deliveryInstructions;
 
     /**
      * @var string|null
@@ -316,63 +274,27 @@ class DataDnc
      *
      * @ORM\Column(name="balwaived", type="string", length=45, nullable=true)
      */
-    protected $balwaived;
+    protected $balanceWaived;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="actcmp", type="string", length=45, nullable=true)
      */
-    protected $actcmp;
+    protected $actCmp;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="holduntil", type="string", length=45, nullable=true)
      */
-    protected $holduntil;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="subsegment", type="string", length=45, nullable=true)
-     */
-    protected $subsegment;
+    protected $holdUntil;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="actiondate", type="date", nullable=true)
      */
-    protected $actiondate;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="rec_owner", type="string", length=45, nullable=true)
-     */
-    protected $recOwner;
-
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="loaddate", type="date", nullable=true)
-     */
-    protected $loaddate;
-
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="updatedate", type="date", nullable=true)
-     */
-    protected $updatedate;
-
-    /**
-     * @var \DateTime|null
-     *
-     * @ORM\Column(name="fileout", type="date", nullable=true)
-     */
-    protected $fileout;
-
+    protected $actionDate;
 
 }
