@@ -3,15 +3,15 @@
 namespace App\Entity\Columns;
 
 use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\Columns\DateTimeRepository;
+use App\Repository\Columns\DateTimeColumnRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass=DateTimeRepository::class)
+ * @ORM\Entity(repositoryClass=DateTimeColumnRepository::class)
  * @ORM\HasLifecycleCallbacks()
  */
-class DateTime extends Date
+class DateTimeColumn extends DateColumn
 {
     public const TIME_ORDERS = [
         'HMS' => 'Hour Minute Second',

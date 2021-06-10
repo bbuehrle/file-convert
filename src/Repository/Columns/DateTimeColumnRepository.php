@@ -2,25 +2,25 @@
 
 namespace App\Repository\Columns;
 
-use App\Entity\Columns\Date;
+use App\Entity\Columns\DateTimeColumn;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Date|null find($id, $lockMode = null, $lockVersion = null)
- * @method Date|null findOneBy(array $criteria, array $orderBy = null)
- * @method Date[]    findAll()
- * @method Date[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method DateTimeColumn|null find($id, $lockMode = null, $lockVersion = null)
+ * @method DateTimeColumn|null findOneBy(array $criteria, array $orderBy = null)
+ * @method DateTimeColumn[]    findAll()
+ * @method DateTimeColumn[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DateRepository extends ServiceEntityRepository
+class DateTimeColumnRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Date::class);
+        parent::__construct($registry, DateTimeColumn::class);
     }
 
     // /**
-    //  * @return Date[] Returns an array of Date objects
+    //  * @return DateTimeColumn[] Returns an array of DateTime objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class DateRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Date
+    public function findOneBySomeField($value): ?DateTime
     {
         return $this->createQueryBuilder('d')
             ->andWhere('d.exampleField = :val')

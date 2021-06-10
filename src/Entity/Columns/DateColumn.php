@@ -4,16 +4,16 @@ namespace App\Entity\Columns;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Entity\FileColumn;
-use App\Repository\Columns\DateRepository;
+use App\Repository\Columns\DateColumnRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass=DateRepository::class)
+ * @ORM\Entity(repositoryClass=DateColumnRepository::class)
  * @ORM\HasLifecycleCallbacks()
  */
-class Date extends FileColumn
+class DateColumn extends FileColumn
 {
     public const DATE_ORDERS = [
         'DMY' => 'Day Month Year',
