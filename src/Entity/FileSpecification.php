@@ -43,6 +43,7 @@ class FileSpecification
 
     /**
      * @ORM\OneToMany(targetEntity=FileColumn::class, mappedBy="specification", orphanRemoval=true)
+     * @ORM\OrderBy({"position" = "ASC"})
      */
     private Collection $columns;
 

@@ -5,6 +5,7 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\FileColumnRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ApiResource()
@@ -22,10 +23,17 @@ abstract class FileColumn
     private ?int $id = null;
 
     /**
+     * @Gedmo\SortableGroup()
      * @ORM\ManyToOne(targetEntity=FileSpecification::class, inversedBy="columns")
      * @ORM\JoinColumn(nullable=false)
      */
     private ?FileSpecification $specification;
+
+    /**
+     * @Gedmo\SortablePosition()
+     * @ORM\Column(type="integer")
+     */
+    protected ?int $position;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -50,6 +58,18 @@ abstract class FileColumn
     public function setSpecification(?FileSpecification $specification): self
     {
         $this->specification = $specification;
+
+        return $this;
+    }
+
+    public function getPosition(): ?int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(?int $position): self
+    {
+        $this->position = $position;
 
         return $this;
     }

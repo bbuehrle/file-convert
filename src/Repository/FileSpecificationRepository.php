@@ -19,6 +19,19 @@ class FileSpecificationRepository extends ServiceEntityRepository
         parent::__construct($registry, FileSpecification::class);
     }
 
+    public function findOneById($value)
+    {
+        return $this->createQueryBuilder('f')
+            ->addSelect('c')
+            ->innerJoin('f.columns', 'c')
+            ->andWhere('f.id = :id')
+            ->setParameter('id', $value)
+            ->orderBy('f.id', 'ASC')
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
+
     // /**
     //  * @return FileSpecification[] Returns an array of FileSpecification objects
     //  */
