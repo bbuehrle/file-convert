@@ -41,6 +41,16 @@ abstract class FileColumn
     private ?string $name = null;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private ?int $start;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private ?int $width;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private bool $isSkipped = false;
@@ -82,6 +92,30 @@ abstract class FileColumn
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getStart(): ?int
+    {
+        return $this->start;
+    }
+
+    public function setStart(?int $start): FileColumn
+    {
+        $this->start = $start;
+
+        return $this;
+    }
+
+    public function getWidth(): ?int
+    {
+        return $this->width;
+    }
+
+    public function setWidth(?int $width): FileColumn
+    {
+        $this->width = $width;
 
         return $this;
     }

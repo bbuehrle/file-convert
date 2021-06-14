@@ -27,6 +27,11 @@ class FileSpecification
     private ?string $name = null;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private bool $isFixedWidth = false;
+
+    /**
      * @ORM\Column(type="string", length=1)
      */
     private ?string $fieldSeparator = null;
@@ -65,6 +70,18 @@ class FileSpecification
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function isFixedWidth(): bool
+    {
+        return $this->isFixedWidth;
+    }
+
+    public function setIsFixedWidth(bool $isFixedWidth): FileSpecification
+    {
+        $this->isFixedWidth = $isFixedWidth;
 
         return $this;
     }
