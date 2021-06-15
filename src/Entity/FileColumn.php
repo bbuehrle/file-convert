@@ -43,12 +43,12 @@ abstract class FileColumn
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private ?int $start;
+    private ?int $start = null;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private ?int $width;
+    private ?int $width = null;
 
     /**
      * @ORM\Column(type="boolean")
