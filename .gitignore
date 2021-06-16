@@ -25,3 +25,6 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
+
+#Ignore "sandbox" commands
+src/Command/Sand*Command.php
