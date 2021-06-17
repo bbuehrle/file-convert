@@ -19,6 +19,31 @@ class FileColumnRepository extends ServiceEntityRepository
         parent::__construct($registry, FileColumn::class);
     }
 
+    public function findByNameAndBestType(string $name): ?string
+    {
+        $query = $this->createQueryBuilder('c')
+            ->andWhere('c.name = :name')
+            ->setParameter('name', $name)
+            ->getQuery()
+            ->getResult()
+        ;
+
+        $array = [];
+        foreach ($query as $column) {
+            $columnClass = get_class($column);
+            if (!isset($array[$columnClass])) {
+                $array[$columnClass] = 0;
+            }
+            $array[$columnClass]++;
+        }
+        if (!empty($array)) {
+            arsort($array);
+            return array_key_first($array);
+        }
+
+        return null;
+    }
+
     // /**
     //  * @return FileColumn[] Returns an array of FileColumn objects
     //  */
